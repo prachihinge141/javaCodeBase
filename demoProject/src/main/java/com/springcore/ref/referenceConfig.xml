@@ -1,0 +1,36 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.springcore.ref.FirstClass" name="fcref">
+		<property name="id" value="10" />
+		<property name="name" value="Prachi" />
+		<property name="sc">
+			<ref bean="scref" />
+		</property>
+
+		<property name="tc">
+			<ref bean="tcref" />
+		</property>
+	</bean>
+
+
+	<bean class="com.springcore.ref.SecondClass" name="scref">
+	<property name="course" value="java" />
+	<property name="amount" value="3000" />
+	<property name="tc">
+	<ref bean="tcref"></ref>
+	</property>
+	</bean>
+
+
+
+	<bean class="com.springcore.ref.ThirdClass" name="tcref">
+	<property name="location" value="Pune"/>
+	<property name="pincode" value="414105"/>
+	
+	</bean>
+
+</beans>
